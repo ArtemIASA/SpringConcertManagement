@@ -40,7 +40,7 @@ public class TicketController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteTicket(@RequestBody Ticket ticket){
+    public ResponseEntity<Void> returnTicket(@RequestBody Ticket ticket){
         Visitor visitor = ticket.getVisitor();
         UUID concertId = concertService.getConcertId(ticket.getConcert());
         ticketService.deleteTicket(ticket);
